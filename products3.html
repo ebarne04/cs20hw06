@@ -16,9 +16,20 @@
                                 align-items: center;
                                 margin-bottom: 20px;
                         }
+                        .product {
+                                margin-bottom: 20px;
+                                padding: 10px;
+                                border-bottom: 1px solid #000;
+                        }
+                        .product:last-child {
+                                border-bottom: none;
+                        }
                         .product-name {
                                 font-weight: bold;
                                 font-size: 20px;
+                        }
+                        .product-price {
+                                font-weight: bold;
                         }
                 </style>
         </head>
@@ -49,7 +60,14 @@
                                                 let htmlContent = '';
                                                 data.forEach(product => {
                                                         if (product.categories.includes(selectedCategory)) {
-                                                                htmlContent += `<div class="product-name">${product.name}</div>`;
+                                                                htmlContent += `
+                                                                        <div class="product">
+                                                                                <div class="product-name">${product.name}</div>
+                                                                                <div class="product-description">${product.description}</div>
+                                                                                <div class="product-price">$${product.price}</div>
+                                                                                <div class="product-categories">Categories: ${product.categories.join(', ')}</div>
+                                                                        </div>
+                                                                `;
                                                         }
                                                 })
                                                 $('#display').html(htmlContent);
