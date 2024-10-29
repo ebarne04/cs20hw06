@@ -44,7 +44,7 @@
                                         categoryList.forEach(cat => {
                                                 $('#category-select').append(`<option value="${cat}">${cat}</option>`);
                                         })
-                                        $("#filter-btn").on("click", function(data) {
+                                        $("#filter-btn").on("click", function() {
                                                 const selectedCategory = $('#category-select').val();
                                                 let htmlContent = '';
                                                 data.forEach(product => {
