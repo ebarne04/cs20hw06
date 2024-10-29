@@ -44,17 +44,16 @@
                                         categoryList.forEach(cat => {
                                                 $('#category-select').append(`<option value="${cat}">${cat}</option>`);
                                         })
-                                });
-
-                                $("#filter-btn").on("click", function() {
-                                        const selectedCategory = $('#category-select').val();
-                                        let htmlContent = '';
-                                        data.forEach(product => {
-                                                if (product.categories.includes(selectedCategory)) {
-                                                        htmlContent += `<div class="product-name">${product.name}</div>`;
-                                                }
-                                        })
-                                        $('#product-display').html(htmlContent);
+                                        $("#filter-btn").on("click", function(data) {
+                                                const selectedCategory = $('#category-select').val();
+                                                let htmlContent = '';
+                                                data.forEach(product => {
+                                                        if (product.categories.includes(selectedCategory)) {
+                                                                htmlContent += `<div class="product-name">${product.name}</div>`;
+                                                        }
+                                                })
+                                                $('#product-display').html(htmlContent);
+                                        });
                                 });
 
                         });
