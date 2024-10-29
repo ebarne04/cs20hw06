@@ -1,0 +1,50 @@
+ [
+        {
+                "name" : "Vintage T-shirt", 
+                "description" : "Tie-dye band T-shirt",
+                "price" : 35,
+                "categories" : ["clothing", "vintage"]
+        },
+        {
+                "name" : "Retro Sunglasses", 
+                "description" : "80's style sunglasses with polarized lenses",
+                "price" : 25,
+                "categories" : ["accessories", "vintage"]
+        },
+        {
+                "name" : "Leather Wallet", 
+                "description" : "HandStitched leather wallet",
+                "price" : 45,
+                "categories" : ["accessories"]
+        },
+        {
+                "name" : "Hoodie", 
+                "description" : "comfortable hoodie with a cute graphic print",
+                "price" : 40,
+                "categories" : ["clothing"]
+        },
+        {
+                "name" : "Vinyl Record", 
+                "description" : "Classic rock album on vinyl",
+                "price" : 30,
+                "categories" : ["music", "vintage"]
+        },
+        {
+                "name" : "Boombox Shaped Speaker", 
+                "description" : "Uniquely retro shaped bluetooth speaker",
+                "price" : 75,
+                "categories" : ["music"]
+        },
+        {
+                "name" : "Hair Bows", 
+                "description" : "Pink polka dot hair bows",
+                "price" : 10,
+                "categories" : ["accessories"]
+        },
+        {
+                "name" : "Long Flowey Skirt", 
+                "description" : "long white linen skirt",
+                "price" : 20,
+                "categories" : ["clothing"]
+        }
+]

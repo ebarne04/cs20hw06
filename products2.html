@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        </head>
+        <body>
+                <div class="products-container" id="display"></div>
+                <script>
+                        $(document).ready(function() {
+                                $.get('products.json', function(data) {
+                                        let htmlContent = '';
+                                        data.forEach(product => {
+                                                htmlContent += `
+                                                        <div class="product">
+                                                                <div class="product-name">${product.name}</div>
+                                                                <div class="product-description">${product.description}</div>
+                                                                <div class="product-price">$${product.price}</div>
+                                                                <div class="product-categories">Categories: ${product.categories.join(', ')}</div>
+                                                        <div>
+                                                `;
+                                        });
+                                        document.getElementById('display').innerHTML = htmlContent;
+                                })
+                        })
+                </script>
+        </body>
+</html>
