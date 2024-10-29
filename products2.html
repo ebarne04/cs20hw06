@@ -4,8 +4,31 @@
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                <style type="text/css">
+                        .products-container {
+                                width: 80%;
+                                max-width: 800px;
+                                padding: 20px;
+                        }
+                        .product {
+                                margin-bottom: 20px;
+                                padding: 10px;
+                                border-bottom: 1px solid #000;
+                        }
+                        .product:last-child {
+                                border-bottom: none;
+                        }
+                        .product-name {
+                                font-weight: bold;
+                                font-size: 20px;
+                        }
+                        .product-price {
+                                font-weight: bold;
+                        }
+                </style>
         </head>
         <body>
+                <h1>My Products</h1>
                 <div class="products-container" id="display"></div>
                 <script>
                         $(document).ready(function() {
