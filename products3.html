@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                <style type="text/css">
+                        .products-container, .filter-container {
+                                width: 80%;
+                                max-width: 800px;
+                                padding: 20px;
+                        }
+                        .filter-container {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                margin-bottom: 20px;
+                        }
+                        .product-name {
+                                font-weight: bold;
+                                font-size: 20px;
+                        }
+                </style>
+        </head>
+        <body>
+                <h1>My Products</h1>
+                <div class="filter-container">
+                        <select id="category-select">
+                          <option value="">--Select Category--</option>
+                        </select>
+                        <button id="filter-btn">Filter</button>
+                      </div>
+                <div class="products-container" id="display"></div>
+                <script>
+                        $(document).ready(function() {
+                                $.get('products.json', function(data) {
+                                        const allCategories = new Set();
+                                        data.forEach(product => {
+                                                product.categories.forEach(cat =>{
+                                                        allCategories.add(cat)
+                                                })
+                                        });
+                                        const categoryList = [...allCategories];
+                                        categoryList.forEach(cat => {
+                                                $('#category-select').append(`<option value="${category}">${category}</option>`);
+                                        })
+                                });
+
+                                $("#filter-btn").on("click", function() {
+                                        const selectedCategory = $('#category-select').val();
+                                        let htmlContent = '';
+                                        data.forEach(product => {
+                                                if (product.categories.includes(selectedCategory)) {
+                                                        htmlContent += `<div class="product-name">${product.name}</div>`;
+                                                }
+                                        })
+                                        $('#product-display').html(htmlContent);
+                                });
+
+                        });
+                </script>
+        </body>
+</html>
